@@ -1,0 +1,52 @@
+/////// this task////////////
+
+
+function Car(name, age) {
+    this.name = name;
+    this.age = age;
+    
+    this.drive = function() {
+    return "Hello " + this.name + " my age " + this.age;
+    }
+    }
+    var auto = new Car("BMW", 20);
+    auto.drive();
+    
+    ======================
+
+    ////////// Function constructor ///////////
+
+    function Calculator(){
+       this.read = function() {
+       this.val1 = +prompt("Enter 1st value", "2");
+       this.val2 = +prompt("Enter 2nd value", "3");
+       } 
+this.sum = function() {
+    return this.val1 + this.val2;
+}
+this.mul = function() {
+    return this.val1 * this.val2;
+}
+    }
+
+    var calc = new Calculator();
+    calc.read();
+    
+    alert("Sum of 2 digits: " + calc.sum());
+    alert("Multiply of 2 digits" + calc.mul());
+
+    //////////////// bind task ////////////////////
+
+    var checkYourAge = function (value) {
+        if (typeof value !== 'number')
+            return false;
+        else
+            return value >= this.min && value <= this.max;
+    }
+    var guestAge = { min: 18, max: 60 };
+    var resultGuestAge = checkYourAge.bind(guestAge);
+    var result = resultGuestAge(15);
+    alert(result);
+
+
+
